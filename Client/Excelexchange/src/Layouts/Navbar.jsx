@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start max-w-[1400px]">
+      <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -40,9 +42,11 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <a className="font-extrabold text-xl">Excelexchange</a>
+        <Link to="/" className="font-extrabold text-xl">
+          Excelexchange
+        </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex ">
         <ul className="menu menu-horizontal px-1">
           <li>
             <a>Item 1</a>
