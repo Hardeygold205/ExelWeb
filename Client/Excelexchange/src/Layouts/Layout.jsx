@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <main className="p-4 max-w-7xl mx-auto">
         <Outlet />
