@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import ExcelDesktop from "../assets/exceldesktop.png";
 import ExcelMobile from "../assets/excelmobile.png";
 import ExcelQrcode from "../assets/excel-QR-CODE.png";
 import { FaApple, FaWindows, FaLinux } from "react-icons/fa";
