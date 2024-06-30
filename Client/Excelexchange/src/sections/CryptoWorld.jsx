@@ -26,8 +26,8 @@ export default function CryptoWorld() {
     },
   ];
   return (
-    <div className="place-content-center">
-      <div className="h-screen w-full items-center flex space-y-8 relative flex-col bg-base-200 p-5 rounded-lg">
+    <div className="place-content-center my-10 max-w-7xl mx-auto">
+      <div className="h-auto w-full items-center flex space-y-8 relative flex-col bg-base-200 p-5 rounded-t-lg">
         <h2 className="md:text-4xl text-2xl text-center">
           Money makes the world go round
         </h2>
@@ -40,19 +40,23 @@ export default function CryptoWorld() {
             alt="WorldMap"
             className="w-[14rem] h-[14rem] mx-auto"
           />
-          <button className="px-12 py-5 outline outline-2 rounded-full transition-all duration-300 font-bold hover:bg-white hover:text-black">
+          <button className="p-5 outline outline-2 rounded-full transition-all duration-300 font-bold hover:bg-white hover:text-black">
             See what crypto can be
             <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
           </button>
         </div>
       </div>
-      <div className="md:flex items-center justify-center space-x-10 w-10/12 mx-auto">
+      <div className="w-full h-[120px] bg-base-200 rounded-b-lg">
+
+      </div>
+      <div className="md:flex items-center justify-center md:space-y-0 space-y-10 md:space-x-10 w-10/12 mx-auto">
         {ThreeInfo.map((item) => (
           <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -50 }}
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: -100 }}
+            transition={{ type: "spring", stiffness: 260, duration: 300 }}
             key={item}
-            className="flex flex-col outline outline-gray-500 bg-base-200 rounded-lg space-y-5 items-center w-[20rem] h-[18rem] p-5">
+            className="flex flex-col outline outline-gray-500 bg-base-200 rounded-lg space-y-5 items-center max-w-[20rem] max-h-[18rem] p-2 md:p-5">
             <img
               src={item.src}
               alt={item.type}

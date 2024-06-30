@@ -7,9 +7,9 @@ import { FaApple, FaWindows, FaLinux } from "react-icons/fa";
 export default function Preview() {
   const [isDesktop, setIsDesktop] = useState(true);
   return (
-    <div className="place-content-center h-screen">
-      <div className="container mx-auto text-center md:flex justify-between w-[80%] md:space-x-10">
-        <div className="grid gap-5 place-content-center w-1/2">
+    <div className="place-content-center space-y-20 my-10 h-auto max-w-7xl mx-auto">
+      <div className="container mx-auto text-center md:flex justify-between w-full md:w-[80%] md:space-x-10">
+        <div className="grid gap-5 place-content-center md:w-1/2">
           <div className="flex justify-center">
             {isDesktop ? (
               <img
@@ -25,16 +25,16 @@ export default function Preview() {
               />
             )}
           </div>
-          <div className="space-x-3 outline rounded-full items-center justify-around p-1 w-[100%]">
+          <div className="space-x-3 outline rounded-full flex items-center justify-around p-1 w-full">
             <button
-              className={` py-2 rounded-full px-12 ${
+              className={` p-2 rounded-full w-1/2 ${
                 isDesktop ? "bg-blue-700" : ""
               }`}
               onClick={() => setIsDesktop(true)}>
               Lite
             </button>
             <button
-              className={`py-2 rounded-full px-12 ${
+              className={`p-2 rounded-full w-1/2 ${
                 !isDesktop ? "bg-blue-700" : ""
               }`}
               onClick={() => setIsDesktop(false)}>
@@ -42,13 +42,13 @@ export default function Preview() {
             </button>
           </div>
         </div>
-        <div className="grid w-1/2">
+        <div className="grid w-full mt-10 md:mt-0 space-y-10 md:space-y-0 md:w-1/2">
           <div>
-            <p className="text-4xl font-bold text-start">
-              Trade on the go. Anywhere, <br /> anytime.
+            <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
+              Trade on the go. Anywhere, <br className="md:flex hidden" /> anytime.
             </p>
           </div>
-          <div className="flex mb-16 items-center space-x-10">
+          <div className="flex md:p-0 p-3 mb-16 justify-between md:justify-start items-center space-x-7">
             <div className="flex justify-center outline rounded-md p-2 w-40 h-40">
               <img src={ExcelQrcode} alt="QR code" className="w-36 h-36" />
             </div>
