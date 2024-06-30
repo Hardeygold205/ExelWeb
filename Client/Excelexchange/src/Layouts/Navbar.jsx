@@ -35,8 +35,8 @@ export default function Navbar() {
     <div
       className={`${
         isScrolled
-          ? "bg-black bg-opacity-95 navbar fixed top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] mx-auto max-w-[2000px] z-50 transition-all duration-300"
-          : "bg-black bg-opacity-0 navbar fixed top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] mx-auto max-w-[2000px] z-50 transition-all duration-300"
+          ? "bg-black bg-opacity-95 navbar fixed top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] mx-auto max-w-[2000px] z-50 transition-all duration-3000"
+          : "bg-black bg-opacity-0 navbar top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] mx-auto max-w-[2000px] z-50 transition-all duration-300"
       }`}>
       <div className="navbar-start flex gap-x-2 w-full lg:w-[70%]">
         <div className="flex items-center">
