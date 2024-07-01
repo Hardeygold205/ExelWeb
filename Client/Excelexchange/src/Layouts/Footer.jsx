@@ -87,7 +87,7 @@ export default function Footer() {
               <ul className="list-disc">
                 {section.lists.map((listItem, listIndex) => (
                   <li className="list-none" key={listIndex}>
-                    <a href="#" className="link link-hover">
+                    <a href="#" className="link link-hover text-[0.75rem]">
                       {listItem}
                     </a>
                   </li>
@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="md:col-span-8 space-y-5 text-justify">
+          <div className="md:col-span-8 space-y-8 text-justify text-[0.8rem]">
             <p>
               Excelexchange is a Securities Dealer registered in... with
               registration number... and authorised by the Financial Services

@@ -9,10 +9,13 @@ export default {
     extend: {
       screens: {
         custom: "1177px",
-      }
+      },
+    },
+    fontFamily: {
+      sans: ["JetBrains Mono", "sans-serif"],
     },
   },
-  plugins: [daisyui, flowbite ],
+  plugins: [daisyui, flowbite],
   daisyui: {
     themes: ["light", "dark", "cupcake", "bumblebee", "emerald", "corporate"],
   },

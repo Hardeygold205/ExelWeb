@@ -8,6 +8,7 @@
     background-color: white;
     color: black;
     height: 100%;
+    @apply font-sans;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +16,7 @@
         background-color: black;
         color: white;
         height: 100%;
+        @apply font-sans;
         
     }
 }

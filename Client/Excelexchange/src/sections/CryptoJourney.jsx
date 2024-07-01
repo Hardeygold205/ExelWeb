@@ -110,8 +110,8 @@ export default function CryptoJourney() {
               </div>
             </div>
           </div>
-          <div className="rounded-xl mb-1 p-5 bg-gray-800">
-            <div className="flex justify-around items-center">
+          <div className="rounded-xl mb-1 p-14 bg-gray-800">
+            <div className="flex justify-around space-y-4 items-center">
               <div className="text-white">
                 <h4 className="text-blue-800 text-lg font-bold">On-chain Staking</h4>
                 <h3 className="text-lg">

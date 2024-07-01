@@ -52,7 +52,7 @@ export default function CryptoTable() {
             {cryptos.map((crypto, index) => (
               <tr key={crypto.id} className="hover items-center text-lg">
                 <th className="">{index + 1}</th>
-                <td className="flex">
+                <td className="flex items-center mt-3">
                   <img
                     src={crypto.image}
                     alt={crypto.name}
@@ -65,8 +65,8 @@ export default function CryptoTable() {
                 <td
                   className={` ${
                     crypto.price_change_percentage_24h < 0
-                      ? "text-red-500"
-                      : "text-green-500"
+                      ? "text-red-500 text-center"
+                      : "text-green-500 text-center"
                   }`}>
                   {crypto.price_change_percentage_24h.toFixed(2)}%
                 </td>

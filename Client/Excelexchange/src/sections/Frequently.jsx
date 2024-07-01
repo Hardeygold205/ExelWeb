@@ -46,7 +46,7 @@ export default function Frequently() {
 
   return (
     <div className="border-y-gray-700 border-y-[0.6px] p-4 md:p-10">
-      <div className="grid md:grid-cols-5 gap-5 max-w-7xl mx-auto justify-center md:w-[80%]">
+      <div className="grid md:grid-cols-5 gap-5 max-w-7xl mx-auto justify-center w-full md:w-[80%]">
         <div className="md:col-span-2">
           <h1 className="text-3xl font-bold md:text-start text-center">
             Frequently Asked <br className="md:flex hidden" /> Questions

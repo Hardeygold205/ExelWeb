@@ -61,7 +61,7 @@ export default function CryptoWorld() {
               className="w-[6rem] h-auto mx-auto"
             />
             <h3 className="text-3xl">{item.type}</h3>
-            <p className="text-center">{item.description}</p>
+            <p className="text-center text-[0.8rem]">{item.description}</p>
             <Link to="" className="underline text-blue-800 mt-auto">
               Learn more
             </Link>
