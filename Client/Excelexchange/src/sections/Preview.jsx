@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExcelMobile from "../assets/excelmobile.png";
+import ExcelMobile2 from "../assets/mobile-trade.png"
 import ExcelQrcode from "../assets/excel-QR-CODE.png";
 import { FaApple, FaWindows, FaLinux } from "react-icons/fa";
 
@@ -18,7 +19,7 @@ export default function Preview() {
               />
             ) : (
               <img
-                src={ExcelMobile}
+                src={ExcelMobile2}
                 alt="Mobile view"
                 className="w-[250px] h-auto "
               />

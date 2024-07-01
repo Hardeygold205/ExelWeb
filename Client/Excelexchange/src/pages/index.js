@@ -1,5 +1,5 @@
 import Home from "./Home";
-import About from "./About";
+import Trade from "./Trade";
 import Login from "./Login";
 import Signup from "./Signup";
 import Potfolio from "./Potfolio";
@@ -8,7 +8,7 @@ import Market from "./Market";
 
 export {
   Home,
-  About,
+  Trade,
   Login,
   Signup,
   Potfolio,
