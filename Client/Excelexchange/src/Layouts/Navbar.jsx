@@ -7,11 +7,12 @@ import {
   faGlobe,
   faQrcode,
 } from "@fortawesome/free-solid-svg-icons";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +41,32 @@ export default function Navbar() {
           ? "bg-black bg-opacity-93 navbar fixed top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
           : "bg-black bg-opacity-0 navbar absolute top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
+      {showMenu && (
+        <div className="absolute top-0 right-0 w-full h-screen z-50">
+          <div className="flex flex-col bg-white h-screen w-full px-4 py-6 shadow-lg">
+            <div className="flex items-center justify-end px-4 py-2">
+              <button
+                onClick={() => setShowMenu(false)}
+                className="px-3 py-2 rounded-md text-sm font-medium text-black">
+                <FaTimes size={24} />
+              </button>
+            </div>
+            {navlist.map((item) => (
+              <Link
+                onClick={() => setShowMenu(false)}
+                to={item.link}
+                key={item.summary}
+                className={`block px-4 py-2 text-sm font-medium ${
+                  location.pathname === item.link
+                    ? "text-blue-800"
+                    : "text-gray-700 hover:text-blue-800"
+                } transition-all duration-300`}>
+                {item.summary}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="justify-between flex w-full">
         <div className="flex space-x-2 items-center">
           <div className="flex items-center">
@@ -110,7 +137,9 @@ export default function Navbar() {
               </label>
             </div>
             <div className="block lg:hidden">
-              <button className="px-3 py-2 rounded-md text-sm font-medium">
+              <button
+                onClick={() => setShowMenu(true)}
+                className="px-3 py-2 rounded-md text-sm font-medium">
                 <FaBars size={24} />
               </button>
             </div>

@@ -46,10 +46,8 @@ export default function CryptoWorld() {
           </button>
         </div>
       </div>
-      <div className="w-full h-[120px] bg-base-200 rounded-b-lg">
-
-      </div>
-      <div className="md:flex items-center justify-center md:space-y-0 space-y-10 md:space-x-10 w-10/12 mx-auto">
+      <div className="w-full h-[120px] bg-base-200 rounded-b-lg"></div>
+      <div className="md:flex items-center justify-center md:space-y-0 space-y-10 md:space-x-10 w-10/12 mx-auto flex flex-col md:flex-row">
         {ThreeInfo.map((item) => (
           <motion.div
             initial={{ opacity: 0, y: 0 }}

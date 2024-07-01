@@ -3,9 +3,9 @@ import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
-    <div className="place-items-center h-auto space-y-20 my-10 grid p-5 md:p-20 pt-10 max-w-7xl mx-auto">
-      <div className="space-y-6">
-        <h1 className="md:text-6xl text-4xl font-extrabold text-center leading-snug">
+    <div className="place-items-center h-auto space-y-20 my-10 grid p-5 md:p-20 pt-14 max-w-7xl mx-auto">
+      <div className="space-y-10">
+        <h1 className="md:text-6xl pt-5 text-4xl font-extrabold text-center leading-snug">
           The World&apos;s Leading <br className="md:flex hidden" /> Foreign
           Exchanges Merchant
         </h1>

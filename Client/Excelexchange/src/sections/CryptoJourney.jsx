@@ -25,7 +25,7 @@ export default function CryptoJourney() {
   return (
     <div className="place-items-center space-y-14 my-10 h-auto grid p-3 md:p-8 max-w-7xl mx-auto">
       <div>
-        <h1 className="md:text-6xl text-4xl font-extrabold text-start md:text-center">
+        <h1 className="md:text-6xl text-4xl font-extrabold text-center">
           Your crypto journey starts here
         </h1>
       </div>
