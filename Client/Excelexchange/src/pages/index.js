@@ -5,6 +5,7 @@ import Signup from "./Signup";
 import Potfolio from "./Potfolio";
 import Company from "./Company";
 import Market from "./Market";
+import BuyCrypto from "./BuyCrypto";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   Potfolio,
   Company,
   Market,
+  BuyCrypto,
 };

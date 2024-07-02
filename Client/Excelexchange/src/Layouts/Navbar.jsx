@@ -17,7 +17,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
+      setIsScrolled(scrollTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -38,8 +38,8 @@ export default function Navbar() {
     <div
       className={`${
         isScrolled
-          ? "bg-black bg-opacity-93 navbar fixed top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
-          : "bg-black bg-opacity-0 navbar absolute top-0 left-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
+          ? "bg-black bg-opacity-93 navbar w-full mx-auto lg:w-[95%] border-x-[0.6px] border-x-gray-700 fixed top-0 left-0 right-0 rounded-b-xl border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
+          : "bg-black bg-opacity-0 navbar  top-0 mx-auto left-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
       {showMenu && (
         <div className="absolute top-0 right-0 w-full h-screen z-50">
