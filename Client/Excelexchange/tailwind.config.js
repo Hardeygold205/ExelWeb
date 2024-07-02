@@ -4,6 +4,7 @@ import flowbite from "flowbite-react/tailwind";
 import daisyui from "daisyui";
 
 export default {
+  //darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   theme: {
     extend: {

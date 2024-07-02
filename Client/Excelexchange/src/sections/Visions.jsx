@@ -11,7 +11,7 @@ export default function Visions() {
         <img
           src={Excellogo}
           alt="Excel logo"
-          className="w-50 h-50 drop-shadow-xl "
+          className="w-50 h-50 drop-shadow-2xl "
         />
       </div>
       <div className="flex justify-between my-5 md:w-[60%] w-full">
