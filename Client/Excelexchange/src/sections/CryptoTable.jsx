@@ -25,7 +25,7 @@ export default function CryptoTable() {
   return (
     <div className="place-items-center space-y-14 my-10 h-auto grid p-3 md:p-8 max-w-7xl mx-auto">
       <div>
-        <h1 className="md:text-6xl text-4xl font-extrabold text-start md:text-center">
+        <h1 className="md:text-6xl custom2:text-3xl sm:text-4xl font-extrabold text-start md:text-center">
           Buy Bitcoin, Ethereum, and <br className="md:flex hidden" /> 250+
           cryptocurrencies
         </h1>

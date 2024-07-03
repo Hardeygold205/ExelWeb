@@ -23,7 +23,7 @@ export default function CryptoJourney() {
   }, []);
 
   return (
-    <div className="place-items-center space-y-14 my-10 h-auto grid p-3 md:p-8 max-w-7xl mx-auto">
+    <div className="place-items-center space-y-14 my-10 h-auto grid p-1 md:p-8 max-w-7xl mx-auto">
       <div>
         <h1 className="md:text-6xl text-4xl font-extrabold text-center">
           Your crypto journey starts here
@@ -46,7 +46,7 @@ export default function CryptoJourney() {
           </div>
           <div className="rounded-4 mb-3 px-4 pt-4 pb-2 rounded-xl bg-base-200">
             <div className="flex flex-col justify-center items-center">
-              <div className=" px-3">
+              <div className="px-3 text-start">
                 <h4 className="text-blue-800 text-lg font-bold">
                   Price Alerts
                 </h4>
@@ -56,11 +56,9 @@ export default function CryptoJourney() {
               </div>
               <div className="mt-3 w-full h-auto">
                 {cryptos.map((crypto) => (
-                  <>
-                    <div
-                      key={crypto.id}
-                      className="grid grid-cols-5 items-center py-1 px-4">
-                      <div className="flex items-center col-span-4">
+                  <div key={crypto.id}>
+                    <div className="flex justify-between items-center py-1 px-4">
+                      <div className="flex items-center">
                         <img
                           className="mt-1 p-1"
                           src={crypto.image}
@@ -75,7 +73,7 @@ export default function CryptoJourney() {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-span-1">
+                      <div className="text-right">
                         <h6 className="mb-0">${crypto.current_price}</h6>
                         <h6
                           className={`mb-0 text-sm ${
@@ -88,7 +86,7 @@ export default function CryptoJourney() {
                       </div>
                     </div>
                     <div className="divider p-0 m-0 w-full"></div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

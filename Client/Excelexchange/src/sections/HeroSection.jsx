@@ -9,7 +9,7 @@ export default function HeroSection() {
           The World&apos;s Leading <br className="md:flex hidden" /> Foreign
           Exchanges Merchant
         </h1>
-        <p className="text-center text-2xl font-bold">
+        <p className="text-center md:text-lg lg:text-2xl font-bold">
           Buy & Sell your favorites{" "}
           <span className="text-blue-800">Crypto</span> and{" "}
           <span className="text-blue-800">Digital Funds</span> with the most

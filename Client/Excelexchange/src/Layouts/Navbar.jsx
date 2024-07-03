@@ -20,11 +20,18 @@ export default function Navbar() {
       setIsScrolled(scrollTop > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (location.pathname !== "/login" && location.pathname !== "/signup") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
+
+  const hideScrolling =
+    location.pathname === "/login" || location.pathname === "/signup";
+
   const navlist = [
     { summary: "Buy Crypto", link: "/buycrypto" },
     { summary: "Market", link: "/market" },
@@ -37,7 +44,9 @@ export default function Navbar() {
   return (
     <div
       className={`${
-        isScrolled
+        hideScrolling
+          ? "bg-base-200 dark:bg-black navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300 fixed"
+          : isScrolled
           ? "bg-base-200 bg-opacity-95 dark:bg-black navbar w-full mx-auto lg:w-[95%] border-x-[0.6px] border-x-gray-700 fixed top-0 left-0 right-0 rounded-b-xl border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
           : "bg-base-200 dark:bg-black navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
@@ -106,8 +115,10 @@ export default function Navbar() {
               />
             </div>
             <div className="space-x-2 hidden custom:block">
-              <a className="btn btn-sm">Log In</a>
-              <a className="btn btn-sm bg-blue-900">Sign Up</a>
+              <Link to="/login" className="btn btn-sm">
+                Log In
+              </Link>
+              <Link to="/signup" className="btn btn-sm bg-blue-800 text-white">Sign Up</Link>
             </div>
             <div className="flex space-x-2">
               <FontAwesomeIcon
@@ -121,11 +132,7 @@ export default function Navbar() {
             </div>
             <div className="items-center sm:flex hidden">
               <label className="swap swap-rotate">
-                <input
-                  type="checkbox"
-                  className=""
-                  value="emerald"
-                />
+                <input type="checkbox" className="" value="emerald" />
                 <svg
                   className="swap-on h-6 w-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"

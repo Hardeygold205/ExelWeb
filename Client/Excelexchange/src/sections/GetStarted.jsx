@@ -1,7 +1,7 @@
 import DefiImg from "../assets/defi.png"
 export default function GetStarted() {
   return (
-    <div className="w-full h-auto p-5 bg-white">
+    <div className="w-full h-auto p-5 dark:bg-orange-50 bg-base-200">
       <div className="grid md:grid-cols-2 gap-10 place-items-center justify-center items-center max-w-7xl mx-auto">
         <div className="text-black flex flex-col text-center space-y-10">
           <h3 className="text-4xl font-bold ">Ready to get started?</h3>
