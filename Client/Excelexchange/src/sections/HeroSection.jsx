@@ -1,20 +1,63 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQrcode } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "../ui/moving-border";
+import { TypewriterEffect } from "../ui/typewriter-effect";
+import { Spotlight } from "../ui/Spotlight";
+import { FlipWords } from "../ui/flip-words";
 
 export default function HeroSection() {
+  const changes = [
+    {
+      text: "Buy",
+    },
+    {
+      text: "&",
+    },
+    {
+      text: "Sell",
+    },
+    {
+      text: "your",
+    },
+    {
+      text: "favorites",
+    },
+    {
+      text: "Crypto",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+    {
+      text: "and",
+    },
+    {
+      text: "Digital Funds",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+    {
+      text: "with",
+    },
+    {
+      text: "most",
+    },
+    {
+      text: "reliable",
+    },
+  ];
+
+  const words = ["Fast", "Best", "Leading", "Modern"];
+
   return (
-    <div className="place-items-center h-auto space-y-20 my-10 grid p-5 md:p-20 pt-14 max-w-7xl mx-auto">
-      <div className="space-y-10">
+    <div className="place-items-center relative h-auto space-y-7 md:space-y-12 my-10 grid p-5 md:p-20 pt-5 max-w-7xl mx-auto">
+      <Spotlight
+        className="-top-40 left-0 md:left-50 md:-top-10"
+        fill="white"
+      />
+      <div className="md:space-y-10 space-y-5">
         <h1 className="md:text-6xl pt-5 text-4xl font-extrabold text-center leading-snug">
-          The World&apos;s Leading <br className="md:flex hidden" /> Foreign
-          Exchanges Merchant
+          The World&apos;s <FlipWords words={words} />{" "}
+          <br className="md:flex hidden" /> Foreign Exchanges Merchant
         </h1>
-        <p className="text-center md:text-lg lg:text-2xl font-bold">
-          Buy & Sell your favorites{" "}
-          <span className="text-blue-800">Crypto</span> and{" "}
-          <span className="text-blue-800">Digital Funds</span> with the most
-          reliable
-        </p>
+        <TypewriterEffect changes={changes} size="10" />
       </div>
       <div className="mx-auto p-2 justify-center items-center">
         <label className=" gap-x-4 flex md:items-center ">
@@ -48,10 +91,10 @@ export default function HeroSection() {
         </label>
       </div>
       <div className="justify-center items-center">
-        <button className="px-12 py-5 outline outline-2 rounded-full transition-all duration-300 font-bold hover:bg-white hover:text-black">
+        <Button className="transition-all duration-300 font-extrabold">
           Explore More
           <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
-        </button>
+        </Button>
       </div>
     </div>
   );

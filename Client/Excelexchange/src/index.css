@@ -5,18 +5,14 @@
 :root, html, body {
     padding: 0;
     margin: 0;
-    background-color: rgb(248 250 252);
-    color: black;
     height: 100%;
+    width: 100%;
     @apply font-sans;
+    @apply dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.025] ;
 }
 
 @media (prefers-color-scheme: dark) {
     :root, html, body {
-        background-color: black;
-        color: white;
-        height: 100%;
-        @apply font-sans;
-        
+        @apply dark:bg-black bg-white dark:bg-grid-white/[0.06] bg-grid-black/[0.2];
     }
 }

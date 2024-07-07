@@ -48,7 +48,7 @@ export default function Navbar() {
           ? "bg-base-200 dark:bg-black navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300 fixed"
           : isScrolled
           ? "bg-base-200 bg-opacity-95 dark:bg-black navbar w-full mx-auto lg:w-[95%] border-x-[0.6px] border-x-gray-700 fixed top-0 left-0 right-0 rounded-b-xl border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
-          : "bg-base-200 dark:bg-black navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
+          : "navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
       {showMenu && (
         <div className="absolute top-0 right-0 w-full h-screen z-50">

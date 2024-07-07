@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import WorldMap from "../assets/world_map.png";
-import EurUsd from "../assets/eur-usd-removebg-preview.png"
-import Commodity from "../assets/stocks.png"
-import BtcEth from "../assets/eth-btc.png"
+import EurUsd from "../assets/eur-usd-removebg-preview.png";
+import Commodity from "../assets/stocks.png";
+import BtcEth from "../assets/eth-btc.png";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Button } from "../ui/moving-border";
 
 export default function CryptoWorld() {
   const ThreeInfo = [
@@ -40,10 +41,12 @@ export default function CryptoWorld() {
             alt="WorldMap"
             className="w-[14rem] h-[14rem] mx-auto"
           />
-          <button className="p-5 outline outline-2 rounded-full transition-all duration-300 font-bold hover:bg-white hover:text-black">
-            See what crypto can be
-            <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
-          </button>
+          <div className="">
+            <Button className="transition-all duration-300 font-bold bg-gray-800 w-70">
+              See what crypto can be
+              <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
+            </Button>
+          </div>
         </div>
       </div>
       <div className="w-full h-[120px] bg-base-200 rounded-b-lg"></div>

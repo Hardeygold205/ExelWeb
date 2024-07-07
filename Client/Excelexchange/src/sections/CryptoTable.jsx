@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Sparklines, SparklinesLine } from "react-sparklines";
+import { Button } from "../ui/moving-border";
 
 export default function CryptoTable() {
   const [cryptos, setCryptos] = useState([]);
@@ -30,11 +31,13 @@ export default function CryptoTable() {
           cryptocurrencies
         </h1>
       </div>
-      <div className="justify-center flex items-center">
-        <button className="block p-5 outline outline-2 rounded-full transition-all duration-300 font-bold hover:bg-white hover:text-black">
+      <div className="justify-center items-center">
+        <Button
+          borderRadius="1.75rem"
+          className="transition-all duration-300 font-extrabold cursor-pointer">
           Check Crypto Prices
           <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
-        </button>
+        </Button>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table">
