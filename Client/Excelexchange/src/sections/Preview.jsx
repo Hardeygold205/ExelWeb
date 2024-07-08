@@ -37,15 +37,15 @@ export default function Preview() {
 
   return (
     <div className="place-content-center space-y-20 my-10 mb-16 h-auto max-w-7xl mx-auto">
-      <div className="container mx-auto text-center md:flex justify-between w-full md:w-[80%] md:space-x-10">
-        <div className="grid gap-5 place-content-center md:w-1/2">
+      <div className="container mx-auto text-center md:flex justify-between w-full lg:w-[80%] custom1:space-x-10">
+        <div className="grid gap-5 place-content-center md:w-2/5">
           {shouldAnimate ? (
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 1.2 }}
               viewport={{ once: true }}
-              className="flex justify-center">
+              className="">
               {isDesktop ? (
                 <img
                   src={ExcelMobile}
@@ -105,7 +105,7 @@ export default function Preview() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 1.2 }}
             viewport={{ once: true }}
-            className="grid w-full mt-10 md:mt-0 space-y-10 md:space-y-0 md:w-1/2">
+            className="grid mt-10 md:mt-0 space-y-10 md:space-y-0 md:w-3/5">
             <div>
               <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
                 Trade on the go. Anywhere, <br className="md:flex hidden" />{" "}

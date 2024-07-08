@@ -3,8 +3,9 @@ import EurUsd from "../assets/eur-usd-removebg-preview.png";
 import Commodity from "../assets/stocks.png";
 import BtcEth from "../assets/eth-btc.png";
 import { Link } from "react-router-dom";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Buttons from "../constant/Buttons";
+//import { BackgroundGradient } from "../ui/background-gradient";
 
 export default function CryptoWorld() {
   const ThreeInfo = [
@@ -58,20 +59,24 @@ export default function CryptoWorld() {
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: -100 }}
-            transition={{ ease: easeInOut, duration: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
             exit={{ opacity: 0, y: 0 }}
             key={item}
-            className="flex flex-col outline outline-gray-500 bg-base-200 rounded-lg space-y-5 items-center max-w-[100rem] custom1:max-w-[20rem] max-h-[18rem] p-5">
-            <img
-              src={item.src}
-              alt={item.type}
-              className="w-[6rem] h-auto mx-auto"
-            />
-            <h3 className="text-3xl">{item.type}</h3>
-            <p className="text-center text-[0.8rem]">{item.description}</p>
-            <Link to="" className="underline text-blue-800 mt-auto">
-              Learn more
-            </Link>
+            className="card outline outline-gray-500 bg-base-200 rounded-lg">
+            <div className="card-body space-y-3 justify-between flex items-center">
+              <img
+                src={item.src}
+                alt={item.type}
+                height="100"
+                width="100"
+                className="object-contain"
+              />
+              <h3 className="lg:text-3xl md:text-2xl text-xl ">{item.type}</h3>
+              <p className="text-center text-[0.8rem]">{item.description}</p>
+              <Link to="" className="underline text-blue-800 mt-auto">
+                Learn more
+              </Link>
+            </div>
           </motion.div>
         ))}
       </div>

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { motion } from "framer-motion";
 import Buttons from "../constant/Buttons";
+import SkeletonRow from "../constant/Skeleton";
 
 export default function CryptoTable() {
   const [cryptos, setCryptos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCryptos = async () => {
@@ -18,6 +20,7 @@ export default function CryptoTable() {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+      setLoading(false);
     };
 
     fetchCryptos();
@@ -49,43 +52,55 @@ export default function CryptoTable() {
             </tr>
           </thead>
           <tbody>
-            {cryptos.map((crypto, index) => (
-              <tr key={crypto.id} className="hover items-center text-lg">
-                <th className="">{index + 1}</th>
-                <td className="flex items-center mt-3">
-                  <img
-                    src={crypto.image}
-                    alt={crypto.name}
-                    className="w-6 h-6 mr-2"
-                  />
-                  {crypto.name}
-                </td>
-                <td className="">${crypto.current_price.toLocaleString()}</td>
-                <td className="">${crypto.market_cap.toLocaleString()}</td>
-                <td
-                  className={` ${
-                    crypto.price_change_percentage_24h < 0
-                      ? "text-red-500 text-center"
-                      : "text-green-500 text-center"
-                  }`}>
-                  {crypto.price_change_percentage_24h.toFixed(2)}%
-                </td>
-                <td className="w-20">
-                  <Sparklines data={crypto.sparkline_in_7d.price.slice(-24)}>
-                    <SparklinesLine
-                      color={
-                        crypto.price_change_percentage_24h < 0 ? "red" : "green"
-                      }
-                    />
-                  </Sparklines>
-                </td>
-                <td>
-                  <Link to="" type="button" className="btn bg-blue-800 text-white btn-xs">
-                    Trade
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {loading
+              ? Array.from({ length: 5 }).map((_, index) => (
+                  <SkeletonRow key={index} />
+                ))
+              : cryptos.map((crypto, index) => (
+                  <tr key={crypto.id} className="hover items-center text-lg">
+                    <th className="">{index + 1}</th>
+                    <td className="flex items-center mt-3">
+                      <img
+                        src={crypto.image}
+                        alt={crypto.name}
+                        className="w-6 h-6 mr-2"
+                      />
+                      {crypto.name}
+                    </td>
+                    <td className="">
+                      ${crypto.current_price.toLocaleString()}
+                    </td>
+                    <td className="">${crypto.market_cap.toLocaleString()}</td>
+                    <td
+                      className={` ${
+                        crypto.price_change_percentage_24h < 0
+                          ? "text-red-500 text-center"
+                          : "text-green-500 text-center"
+                      }`}>
+                      {crypto.price_change_percentage_24h.toFixed(2)}%
+                    </td>
+                    <td className="w-20">
+                      <Sparklines
+                        data={crypto.sparkline_in_7d.price.slice(-24)}>
+                        <SparklinesLine
+                          color={
+                            crypto.price_change_percentage_24h < 0
+                              ? "red"
+                              : "green"
+                          }
+                        />
+                      </Sparklines>
+                    </td>
+                    <td>
+                      <Link
+                        to=""
+                        type="button"
+                        className="btn bg-blue-800 text-white btn-xs">
+                        Trade
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>

@@ -109,7 +109,7 @@ export default function Navbar() {
                 <li className="flex">
                   <Link
                     to={item.link}
-                    className={`text-sm px-3 ${
+                    className={`text-sm px-2 ${
                       location.pathname === item.link
                         ? "text-sky-900"
                         : "hover:text-sky-900"
@@ -131,7 +131,7 @@ export default function Navbar() {
                 className="input input-bordered w-24 input-sm md:w-auto "
               />
             </div>
-            <div className="space-x-2 hidden custom:block">
+            <div className="space-x-1 hidden custom:block">
               <Link to="/login" className="btn btn-sm">
                 Log In
               </Link>
