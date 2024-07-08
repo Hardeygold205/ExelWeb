@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import { Button } from "../ui/moving-border";
+import { motion } from "framer-motion";
+import Buttons from "../constant/Buttons";
 
 export default function CryptoTable() {
   const [cryptos, setCryptos] = useState([]);
@@ -25,19 +24,17 @@ export default function CryptoTable() {
   }, []);
   return (
     <div className="place-items-center space-y-14 my-10 h-auto grid p-3 md:p-8 max-w-7xl mx-auto">
-      <div>
+      <motion.div
+        initial={{ opacity: 0.5, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}>
         <h1 className="md:text-6xl custom2:text-3xl sm:text-4xl font-extrabold text-start md:text-center">
           Buy Bitcoin, Ethereum, and <br className="md:flex hidden" /> 250+
           cryptocurrencies
         </h1>
-      </div>
+      </motion.div>
       <div className="justify-center items-center">
-        <Button
-          borderRadius="1.75rem"
-          className="transition-all duration-300 font-extrabold cursor-pointer">
-          Check Crypto Prices
-          <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
-        </Button>
+        <Buttons tittle="Check Cryto Prices" />
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table">
@@ -83,7 +80,7 @@ export default function CryptoTable() {
                   </Sparklines>
                 </td>
                 <td>
-                  <Link to="" type="button" className="btn bg-blue-800 btn-xs">
+                  <Link to="" type="button" className="btn bg-blue-800 text-white btn-xs">
                     Trade
                   </Link>
                 </td>

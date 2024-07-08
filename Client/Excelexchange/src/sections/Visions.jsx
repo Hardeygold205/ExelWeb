@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import Excellogo from "../assets/excel-blue-logo.png";
-import { Button } from "../ui/moving-border";
+import Buttons from "../constant/Buttons";
 
 export default function Visions() {
   return (
@@ -27,10 +27,7 @@ export default function Visions() {
         </div>
       </div>
       <div className="space-y-8">
-        <Button className="flex items-center transition-all duration-300 font-bold">
-          About us
-          <FaArrowRight className="mx-3 hover:rotate-45 ease-in-out transition-all duration-700" />
-        </Button>
+        <Buttons tittle="About Us" icon={FaArrowRight} />
       </div>
     </div>
   );

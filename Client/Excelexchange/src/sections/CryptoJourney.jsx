@@ -30,22 +30,22 @@ export default function CryptoJourney() {
         </h1>
       </div>
       <div className="flex flex-wrap justify-center">
-        <div className="w-full lg:w-5/12 p-2">
-          <div className="rounded-4 mb-3 p-4 rounded-xl  bg-base-200">
-            <div className="grid grid-cols-5 items-center">
-              <div className=" col-span-3 space-y-3 p-5">
+        <div className="w-full md:w-5/12 p-2 flex flex-col space-y-3">
+          <div className="flex-1 rounded-4 p-4 rounded-xl bg-base-200">
+            <div className="grid grid-cols-5 items-center h-full">
+              <div className="col-span-3 space-y-3 p-5">
                 <h4 className="text-blue-800 text-lg font-bold">Buy crypto</h4>
                 <h3 className="text-lg">
                   Buy BTC, ETH, and other crypto easily via bank transfer.
                 </h3>
               </div>
-              <div className="col-span-2">
+              <div className="col-span-2 flex justify-center items-center">
                 <img className="img-fluid" src={BuyBtcImg} alt="" width="150" />
               </div>
             </div>
           </div>
-          <div className="rounded-4 mb-3 px-4 pt-4 pb-2 rounded-xl bg-base-200">
-            <div className="flex flex-col justify-center items-center">
+          <div className="flex-1 rounded-4 px-4 pt-4 pb-2 rounded-xl bg-base-200">
+            <div className="flex flex-col justify-center items-center h-full">
               <div className="px-3 text-start">
                 <h4 className="text-blue-800 text-lg font-bold">
                   Price Alerts
@@ -92,10 +92,10 @@ export default function CryptoJourney() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-5/12 p-2">
-          <div className="rounded-xl mb-3 px-5 pt-4 bg-base-200">
-            <div className="flex flex-col justify-center items-center">
-              <div className=" mb-5">
+        <div className="w-full md:w-5/12 p-2 flex flex-col space-y-3">
+          <div className="flex-1 rounded-xl px-5 pt-4 bg-base-200">
+            <div className="flex flex-col justify-center items-center h-full">
+              <div className="mb-5">
                 <h4 className="text-blue-800 text-lg font-bold">
                   Recurring Buy
                 </h4>
@@ -104,7 +104,7 @@ export default function CryptoJourney() {
                   monthly trades.
                 </h3>
               </div>
-              <div>
+              <div className="flex justify-center items-center">
                 <img
                   className="img-fluid"
                   src={ReoccuringImg}
@@ -114,9 +114,9 @@ export default function CryptoJourney() {
               </div>
             </div>
           </div>
-          <div className="rounded-xl mb-1 p-5 md:p-14 bg-base-200">
-            <div className="flex justify-around space-y-4 items-center">
-              <div className="">
+          <div className="flex-1 rounded-xl p-5 md:p-10 bg-base-200">
+            <div className="flex justify-around items-center h-full">
+              <div>
                 <h4 className="text-blue-800 text-lg font-bold">
                   On-chain Staking
                 </h4>
@@ -124,7 +124,7 @@ export default function CryptoJourney() {
                   Generate passive income by helping to secure blockchains.
                 </h3>
               </div>
-              <div>
+              <div className="flex justify-center items-center">
                 <img
                   className="img-fluid"
                   src={OnStakeImg}
@@ -135,14 +135,13 @@ export default function CryptoJourney() {
             </div>
           </div>
         </div>
-        <div className="w-full p-2 md:p-5 bg-base-200 rounded-xl justify-center flex-col lg:w-10/12 space-y-1 md:space-y-3">
+        <div className="w-full p-2 md:p-5 bg-base-200 rounded-xl justify-center flex-col md:w-10/12 space-y-1 md:space-y-3">
           <h5 className="text-gray-400 text-center">
             Join our <span className="text-blue-800">01+ users</span>
           </h5>
           <h1 className="font-bold text-3xl text-center">Get started today</h1>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }

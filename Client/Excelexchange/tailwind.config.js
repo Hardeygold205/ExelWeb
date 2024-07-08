@@ -11,6 +11,7 @@ export default {
     extend: {
       screens: {
         custom: "1177px",
+        custom1: "855px",
         custom2: "300px",
       },
       animation: {

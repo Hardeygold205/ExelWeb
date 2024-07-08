@@ -1,12 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import WorldMap from "../assets/world_map.png";
 import EurUsd from "../assets/eur-usd-removebg-preview.png";
 import Commodity from "../assets/stocks.png";
 import BtcEth from "../assets/eth-btc.png";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Button } from "../ui/moving-border";
+import { easeInOut, motion } from "framer-motion";
+import Buttons from "../constant/Buttons";
 
 export default function CryptoWorld() {
   const ThreeInfo = [
@@ -28,7 +26,7 @@ export default function CryptoWorld() {
   ];
   return (
     <div className="place-content-center my-10 max-w-7xl mx-auto">
-      <div className="h-auto w-full items-center flex space-y-8 relative flex-col bg-base-200 p-5 rounded-t-lg">
+      <div className="h-auto w-full items-center flex space-y-8 relative flex-col bg-base-200 bg-opacity-80 p-5 rounded-t-lg">
         <h2 className="md:text-4xl text-2xl text-center">
           Money makes the world go round
         </h2>
@@ -42,22 +40,28 @@ export default function CryptoWorld() {
             className="w-[14rem] h-[14rem] mx-auto"
           />
           <div className="">
-            <Button className="transition-all duration-300 font-bold bg-gray-800 w-70">
+            <Buttons
+              tittle="See What Crypto Can Be"
+              className="w-70"
+              bgColor="bg-gray-800"
+            />
+            {/* <Button className="transition-all duration-300 font-bold bg-gray-800 w-70">
               See what crypto can be
               <FontAwesomeIcon icon={faQrcode} className="text-xl px-2" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
-      <div className="w-full h-[120px] bg-base-200 rounded-b-lg"></div>
-      <div className="md:flex items-center justify-center md:space-y-0 space-y-10 md:space-x-10 w-10/12 mx-auto flex flex-col md:flex-row">
+      <div className="w-full h-[120px] bg-base-200 bg-opacity-80 rounded-b-lg"></div>
+      <div className="custom1:flex items-center justify-center custom1:space-y-0 space-y-10 custom1:space-x-10 w-10/12 mx-auto flex flex-col custom1:flex-row">
         {ThreeInfo.map((item) => (
           <motion.div
             initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: -100 }}
-            transition={{ type: "spring", stiffness: 260, duration: 300 }}
+            whileInView={{ opacity: 1, y: -100 }}
+            transition={{ ease: easeInOut, duration: 1 }}
+            exit={{ opacity: 0, y: 0 }}
             key={item}
-            className="flex flex-col outline outline-gray-500 bg-base-200 rounded-lg space-y-5 items-center max-w-[20rem] max-h-[18rem] p-2 md:p-5">
+            className="flex flex-col outline outline-gray-500 bg-base-200 rounded-lg space-y-5 items-center max-w-[100rem] custom1:max-w-[20rem] max-h-[18rem] p-5">
             <img
               src={item.src}
               alt={item.type}
