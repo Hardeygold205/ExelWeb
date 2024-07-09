@@ -1,6 +1,9 @@
+import SignupPage from "../sections/SignupPage"
 
 export default function Signup() {
   return (
-    <div>Signup</div>
+    <div>
+      <SignupPage />
+    </div>
   )
 }

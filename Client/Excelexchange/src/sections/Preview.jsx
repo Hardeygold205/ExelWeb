@@ -5,6 +5,7 @@ import ExcelQrcode from "../assets/excel-QR-CODE.png";
 import { FaApple, FaWindows, FaLinux } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+
 // Custom hook to check screen size
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -36,7 +37,7 @@ export default function Preview() {
   const shouldAnimate = size.width >= 768; // md breakpoint is 768px in Tailwind CSS
 
   return (
-    <div className="place-content-center space-y-20 my-10 mb-16 h-auto max-w-7xl mx-auto">
+    <div className="space-y-20 my-10 mb-16 h-auto max-w-7xl mx-auto">
       <div className="container mx-auto text-center md:flex justify-between w-full lg:w-[80%] custom1:space-x-10">
         <div className="grid gap-5 place-content-center md:w-2/5">
           {shouldAnimate ? (
@@ -105,15 +106,15 @@ export default function Preview() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 1.2 }}
             viewport={{ once: true }}
-            className="grid mt-10 md:mt-0 space-y-10 md:space-y-0 md:w-3/5">
+            className="justify-between flex flex-col w-full md:w-3/5">
             <div>
               <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
                 Trade on the go. Anywhere, <br className="md:flex hidden" />{" "}
                 anytime.
               </p>
             </div>
-            <div className="flex md:p-0 p-3 mb-16 justify-between md:justify-start items-center space-x-7">
-              <div className="flex justify-center outline rounded-md p-2 w-40 h-40">
+            <div className="flex justify-start items-center space-x-7">
+              <div className="outline rounded-md p-2">
                 <img src={ExcelQrcode} alt="QR code" className="w-36 h-36" />
               </div>
               <div className="text-start space-y-4">
@@ -137,16 +138,16 @@ export default function Preview() {
             </div>
           </motion.div>
         ) : (
-          <div className="grid w-full mt-10 md:mt-0 space-y-10 md:space-y-0 md:w-1/2">
+          <div className="grid mt-10 md:mt-0 space-y-10 md:space-y-5 md:w-1/2">
             <div>
               <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
                 Trade on the go. Anywhere, <br className="md:flex hidden" />{" "}
                 anytime.
               </p>
             </div>
-            <div className="flex md:p-0 p-3 mb-16 justify-between md:justify-start items-center space-x-7">
+            <div className="flex justify-start items-center space-x-7">
               <div className="flex justify-center outline rounded-md p-2 w-40 h-40">
-                <img src={ExcelQrcode} alt="QR code" className="w-36 h-36" />
+                <img src={ExcelQrcode} alt="QR code" />
               </div>
               <div className="text-start space-y-4">
                 <p className="text-gray-500">Scan to download the App</p>

@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import Buttons from "../constant/Buttons";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import { Spotlight } from "../ui/Spotlight";
@@ -59,13 +57,13 @@ export default function HeroSection() {
         transition={{ duration: 1, ease: "easeInOut" }}
         className="flex-1 flex flex-col justify-center items-center space-y-10">
         <div className="md:space-y-10 space-y-5">
-          <h1 className="md:text-6xl pt-5 text-4xl font-extrabold text-center leading-snug">
+          <h1 className="md:text-6xl text-4xl font-extrabold text-center leading-snug">
             The World&apos;s <FlipWords words={words} />{" "}
             <br className="md:flex hidden" /> Foreign Exchanges Merchant
           </h1>
           <TypewriterEffect changes={changes} size="10" />
         </div>
-        <div className="mx-auto p-2 justify-center items-center">
+        <div className="mx-auto justify-center items-center mb-10">
           <label className=" gap-x-4 flex md:items-center ">
             <input
               type="checkbox"

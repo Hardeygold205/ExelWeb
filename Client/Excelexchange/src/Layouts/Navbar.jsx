@@ -52,12 +52,12 @@ export default function Navbar() {
           : "navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
       {showMenu && (
-        <div className="fixed top-0 right-0 bottom-0 left-0  w-full h-screen z-50">
-          <div className="flex flex-col bg-white h-screen w-full px-4 py-6 shadow-lg">
+        <div className="fixed top-0 right-0 bottom-0 left-0 w-full h-screen z-50">
+          <div className="flex flex-col dark:bg-black bg-white h-screen w-full px-4 py-6 shadow-lg">
             <div className="flex items-center justify-end px-4 py-2">
               <button
                 onClick={() => setShowMenu(false)}
-                className="px-3 py-2 rounded-md text-sm font-medium text-black">
+                className="px-3 py-2 rounded-md text-sm font-medium ">
                 <FaTimes size={24} />
               </button>
             </div>
@@ -74,6 +74,20 @@ export default function Navbar() {
                 {item.summary}
               </Link>
             ))}
+            <div className="space-x-5 space-y-5">
+              <Link
+                onClick={() => setShowMenu(false)}
+                to="/login"
+                className="btn btn-sm">
+                Log In
+              </Link>
+              <Link
+                onClick={() => setShowMenu(false)}
+                to="/signup"
+                className="btn btn-sm bg-blue-800 text-white">
+                Sign Up
+              </Link>
+            </div>
           </div>
         </div>
       )}
@@ -84,15 +98,15 @@ export default function Navbar() {
               <motion.img
                 initial={{ scale: 0, rotate: "0deg" }}
                 animate={{
-                  scale: [1, 1.15, 1],
-                  rotate: ["0deg", "30deg", "0deg"],
+                  scale: [1, 1.1, 1.12, 1.13, 1],
+                  rotate: ["0deg", "15deg", "30deg", "60deg", "0deg"],
                 }}
                 transition={{
                   ease: "circInOut",
                   duration: 1.5,
                   repeat: Infinity,
-                  repeatDelay: 1.2,
-                  delay: 2,
+                  repeatDelay: 1.5,
+                  delay: 3,
                 }}
                 src={Excellogo}
                 className="w-8 h-8"
