@@ -1,4 +1,4 @@
-import { Home, Trade, Market, Company, Login, Signup, Potfolio, BuyCrypto } from "./pages";
+import { Home, Trade, Market, Company, Login, Signup, Potfolio, BuyCrypto, Dashboard } from "./pages";
 import Layout from "./Layouts/Layout";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export default function App() {
@@ -14,6 +14,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/buycrypto" element={<BuyCrypto />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </Router>

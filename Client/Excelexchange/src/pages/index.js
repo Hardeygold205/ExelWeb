@@ -6,6 +6,7 @@ import Potfolio from "./Potfolio";
 import Company from "./Company";
 import Market from "./Market";
 import BuyCrypto from "./BuyCrypto";
+import Dashboard from "./Dashboard";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Company,
   Market,
   BuyCrypto,
+  Dashboard,
 };

@@ -6,6 +6,7 @@ const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
+const auth = require("./middlewares/auth");
 
 const app = express();
 const mongourl = process.env.MONGODB_URL;
@@ -33,6 +34,108 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
+
+app.post("/api/signup", async (req, res) => {
+  try {
+    const { firstname, lastname, username, email, password } = req.body;
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      firstname,
+      lastname,
+      username,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+
+    const token = jwt.sign(
+      {
+        userId: newUser._id,
+        email: newUser.email,
+        firstname: newUser.firstname,
+        lastname: newUser.lastname,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
+    res.status(201).json({ message: "User created successfully", token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.post("/api/login", async (req, res) => {
+  try {
+    const { emailOrUsername, password } = req.body;
+
+    const user = await User.findOne({
+      $or: [{ email: emailOrUsername }, { username: emailOrUsername }],
+    });
+    if (!user) {
+      return res.status(401).json({ message: "Wrong credentials" });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid name or password" });
+    }
+
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        email: user.email,
+        firstname: user.firstname,
+        lastname: user.lastname,
+      },
+      process.env.JWT_SECRET
+    );
+    res.status(200).json({ token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.get("/api/users", auth, async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.get("/api/user/me", auth, async (req, res) => {
+  try {
+    const user = req.user;
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.delete("/api/delete", auth, async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.user.userId);
+    res.status(200).json({ message: "Account deleted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
