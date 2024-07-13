@@ -6,11 +6,11 @@ import { Input } from "../ui/input";
 import { cn } from "../utils/cn";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
-import BTCImg from "../assets/bitcoin-btc-logo.png";
-import ETHImg from "../assets/Ethereum-Logo-PNG-Pic.png";
-import TRXImg from "../assets/tron-logo.png";
-import USDTImg from "../assets/tether.png";
-import XRPImg from "../assets/stellar.png";
+// import BTCImg from "../assets/bitcoin-btc-logo.png";
+// import ETHImg from "../assets/Ethereum-Logo-PNG-Pic.png";
+// import TRXImg from "../assets/tron-logo.png";
+// import USDTImg from "../assets/tether.png";
+// import XRPImg from "../assets/stellar.png";
 import axios from "axios";
 
 export default function LoginPage() {
@@ -87,9 +87,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex justify-center items-center mx-auto relative ">
-      <div className="grid grid-cols-5 w-full mx-auto max-w-[1400px] mt-14 custom1:mt-0 custom1:py-10 relative custom1:fixed top-0 bottom-0">
-        <div className="custom1:col-span-2 col-span-5 p-5 custom1:p-10">
+    <div className="relative ">
+      <div className="grid lg:grid-cols-5 w-full mx-auto max-w-[1400px] mt-14 custom1:mt-0 custom1:py-10 relative custom1:fixed top-0 bottom-0">
+        <div className="lg:col-span-2 col-span-5 p-5 mx-auto flex lg:p-10">
           <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
               Welcome Back
@@ -174,62 +174,60 @@ export default function LoginPage() {
             </form>
           </div>
         </div>
-        <div className="custom1:col-span-3 m-10 mx-auto  w-full justify-center items-center hidden custom1:flex rounded-none md:rounded-2xl border-gray-400 border-[0.6px]">
-          <div className="relative p-6 ">
-            <motion.div className="absolute inset-0 border-8 border-dashed border-blue-800  rounded-full" />
-            <motion.img
-              src={Excellogo}
-              alt="Excel logo"
-              className="w-60 h-60 drop-shadow-2xl"
-              animate={{ scale: [1, 1.03, 1] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            />
+        <div className="lg:col-span-3 col-span-5 flex flex-col lg:flex-row items-center justify-between bg-white dark:bg-black p-5 w-full rounded-none md:rounded-2xl border-gray-400 border-[0.6px] m-10 mx-auto">
+          <div className="space-y-10 lg:space-y-20">
+            <h1 className="text-2xl lg:text-4xl font-extrabold">
+              Find and Trade <br className="hidden lg:flex" /> Thousands of{" "}
+              <br className="hidden lg:flex" />
+              Cryptocurrencies
+            </h1>
+            <div className="flex flex-col gap-y-5 lg:gap-y-10">
+              <label className="flex items-center gap-x-4">
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  disabled
+                  className="checkbox bg-blue-800 pointer-events-none"
+                />
+                <span>Excel makes it easy to buy crypto</span>
+              </label>
+              <label className="flex items-center gap-x-4">
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  disabled
+                  className="checkbox bg-blue-800 pointer-events-none"
+                />
+                <span>Your Safe and Trusted Crypto Exchange</span>
+              </label>
+              <label className="flex items-center gap-x-4">
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  disabled
+                  className="checkbox bg-blue-800 pointer-events-none"
+                />
+                <span>
+                  The industry’s most comprehensive insurance coverage
+                </span>
+              </label>
+            </div>
           </div>
-          <div>
-            <img
-              src={BTCImg}
-              alt="bitcoin"
-              className="absolute opacity-15 w-20 h-20 top-20 right-1 "
-            />
-          </div>
-          <div>
-            <img
-              src={BTCImg}
-              alt="bitcoin"
-              className="absolute opacity-15 w-20 h-20 top-20 right-1 "
-            />
-          </div>
-          <div>
-            <img
-              src={ETHImg}
-              alt="bitcoin"
-              className="absolute opacity-15 w-20 h-20 top-50 right-1 "
-            />
-          </div>
-          <div>
-            <img
-              src={TRXImg}
-              alt="bitcoin"
-              className="absolute opacity-15 w-20 h-20 top-20 left-[41%]"
-            />
-          </div>
-          <div>
-            <img
-              src={USDTImg}
-              alt="bitcoin"
-              className="absolute w-20 h-20 bottom-20 opacity-25"
-            />
-          </div>
-          <div>
-            <img
-              src={XRPImg}
-              alt="bitcoin"
-              className="absolute opacity-10 w-20 h-20 bottom-20 left-[50%] "
-            />
+          <div className="hidden xl:flex">
+            <div className="relative p-6">
+              <motion.div className="absolute inset-0 border-8 border-dashed border-blue-800 rounded-full" />
+              <motion.img
+                src={Excellogo}
+                alt="Excel logo"
+                className="w-32 h-32 lg:w-60 lg:h-60 drop-shadow-2xl"
+                animate={{ scale: [1, 1.03, 1] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

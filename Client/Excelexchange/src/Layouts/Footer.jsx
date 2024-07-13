@@ -99,16 +99,18 @@ export default function Footer() {
       </footer>
       <div className="divider mx-auto max-w-7xl"></div>
       <footer className="footer max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 ">
-          <div className="md:col-span-4">
-            <div className="md:w-32">
-              <Link to="/" className="font-extrabold flex items-center text-xl">
+        <div className="grid md:grid-cols-12 mb-7 md:mb-auto">
+          <div className="md:col-span-4 flex flex-col items-center md:items-start w-full md:w-auto">
+            <div className="md:w-full w-full md:px-0 px-8 md:pb-0 pb-8">
+              <Link
+                to="/"
+                className="font-extrabold flex items-center text-xl justify-center md:justify-start">
                 <img src={Excellogo} className="w-8 h-8" alt="Excel logo" />
                 <span className="uppercase font-bold text-blue-800 text-2xl ml-2">
                   Excelexchange
                 </span>
               </Link>
-              <div className="flex space-x-2 mt-4">
+              <div className="flex justify-between gap-2 mt-4 w-full">
                 {socialLinks.slice(0, 5).map((social, index) => (
                   <Link
                     key={index}
@@ -118,7 +120,7 @@ export default function Footer() {
                   </Link>
                 ))}
               </div>
-              <div className="flex space-x-2 mt-4">
+              <div className="flex justify-between gap-2 mt-10 md:mt-4 w-full">
                 {socialLinks.slice(5, 10).map((social, index) => (
                   <Link
                     key={index}
@@ -130,6 +132,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
           <div className="md:col-span-8 space-y-8 text-justify text-[0.8rem]">
             <p>
               Excelexchange is a Securities Dealer registered in... with

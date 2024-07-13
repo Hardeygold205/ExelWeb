@@ -43,7 +43,7 @@ export default function Market() {
         <thead>
           <tr>
             <th className="py-2">#</th>
-            <th className="py-2">Name</th>
+            <th className="py-2 ">Name</th>
             <th className="py-2">Symbol</th>
             <th className="py-2">Price</th>
             <th className="py-2">24h Change</th>
@@ -54,7 +54,7 @@ export default function Market() {
           {cryptos.map((crypto, index) => (
             <tr key={crypto.id} className="text-center">
               <td className="py-2">{(page - 1) * 50 + index + 1}</td>
-              <td className="py-2 flex items-center">
+              <td className="py-2 flex justify-start items-center ">
                 <img
                   src={crypto.image}
                   alt={crypto.name}

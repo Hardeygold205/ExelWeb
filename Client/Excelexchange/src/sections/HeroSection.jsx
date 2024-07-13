@@ -68,7 +68,8 @@ export default function HeroSection() {
             <input
               type="checkbox"
               defaultChecked
-              className="checkbox bg-blue-800 align-top"
+              disabled
+              className="checkbox bg-blue-800 align-top pointer-events-none"
             />
             <span className="">Excel makes it easy to buy crypto</span>
           </label>
@@ -76,7 +77,8 @@ export default function HeroSection() {
             <input
               type="checkbox"
               defaultChecked
-              className="checkbox text-blue-800 align-top"
+              disabled
+              className="checkbox text-blue-800 align-top pointer-events-none"
             />
             <span className="">
               Your Safe and Trusted Crypto Exchange and security certification
@@ -86,7 +88,8 @@ export default function HeroSection() {
             <input
               type="checkbox"
               defaultChecked
-              className="checkbox text-blue-800 align-top"
+              disabled
+              className="checkbox text-blue-800 align-top pointer-events-none"
             />
             <span className="">
               The industry’s most comprehensive insurance coverage and verified

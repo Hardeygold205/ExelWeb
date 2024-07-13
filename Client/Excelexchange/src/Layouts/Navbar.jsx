@@ -14,6 +14,11 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
+  // const [showDropdown, setShowDropdown] = useState({});
+
+  // const toggleDropdown = (index) => {
+  //   setShowDropdown((prev) => ({ ...prev, [index]: !prev[index] }));
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,19 +57,22 @@ export default function Navbar() {
           : "navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
       }`}>
       {showMenu && (
-        <div className="fixed top-0 right-0 bottom-0 left-0 w-full h-screen z-50">
+        <div
+          className={`fixed top-0 left-0 bottom-0 duration-700 w-full h-screen z-50 ${
+            showMenu ? "translate-x-0" : "-translate-x-full"
+          }`}>
           <div className="flex flex-col dark:bg-black bg-white h-screen w-full px-4 py-6 shadow-lg">
             <div className="flex items-center justify-end px-4 py-2">
               <button
                 onClick={() => setShowMenu(false)}
-                className="px-3 py-2 rounded-md text-sm font-medium ">
+                className="px-3 py-2 rounded-md text-sm font-medium">
                 <FaTimes size={24} />
               </button>
             </div>
             {navlist.map((item) => (
               <Link
-                onClick={() => setShowMenu(false)}
                 to={item.link}
+                onClick={() => setShowMenu(false)}
                 key={item.summary}
                 className={`block px-4 py-2 text-sm font-medium ${
                   location.pathname === item.link
@@ -74,7 +82,7 @@ export default function Navbar() {
                 {item.summary}
               </Link>
             ))}
-            <div className="space-x-5 space-y-5">
+            <div className="flex flex-col space-y-5 mt-4">
               <Link
                 onClick={() => setShowMenu(false)}
                 to="/login"
