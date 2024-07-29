@@ -5,7 +5,6 @@ import ExcelQrcode from "../assets/excel-QR-CODE.png";
 import { FaApple, FaWindows, FaLinux } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-
 // Custom hook to check screen size
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({

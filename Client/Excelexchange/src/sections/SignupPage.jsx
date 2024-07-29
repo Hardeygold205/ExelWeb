@@ -6,14 +6,11 @@ import { Input } from "../ui/input";
 import { cn } from "../utils/cn";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
-// import BTCImg from "../assets/bitcoin-btc-logo.png";
-// import ETHImg from "../assets/Ethereum-Logo-PNG-Pic.png";
-// import TRXImg from "../assets/tron-logo.png";
-// import USDTImg from "../assets/tether.png";
-// import XRPImg from "../assets/stellar.png";
 import axios from "axios";
+import useSession from "../hooks/useSession";
 
 export default function SignupPage() {
+  const { login } = useSession();
   const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -81,12 +78,13 @@ export default function SignupPage() {
     setErrors({});
     setMessage("");
     try {
-      const response = await axios.post("http://172.20.10.2:5005/api/signup", {
+      const response = await axios.post("https://factually-organic-chipmunk.ngrok-free.app/api/signup", {
         firstname,
         lastname,
         email,
         password,
       });
+      login(response.data.token);
       navigate("/dashboard");
       console.log("Signup response:", response.data);
     } catch (error) {

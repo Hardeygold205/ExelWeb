@@ -1,13 +1,20 @@
+import { useRef } from "react";
 import WorldMap from "../assets/world_map.png";
 import EurUsd from "../assets/eur-usd-removebg-preview.png";
 import Commodity from "../assets/stocks.png";
 import BtcEth from "../assets/eth-btc.png";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import Buttons from "../constant/Buttons";
 //import { BackgroundGradient } from "../ui/background-gradient";
 
 export default function CryptoWorld() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["80", "center", "80"],
+  });
+
   const ThreeInfo = [
     {
       src: EurUsd,
@@ -26,7 +33,10 @@ export default function CryptoWorld() {
     },
   ];
   return (
-    <div className="place-content-center my-10 max-w-7xl mx-auto">
+    <motion.div
+      style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+      ref={ref}
+      className="place-content-center my-10 max-w-7xl mx-auto">
       <div className="h-auto w-full items-center flex space-y-8 relative flex-col bg-base-200 bg-opacity-80 p-5 rounded-t-lg">
         <h2 className="md:text-4xl text-2xl text-center">
           Money makes the world go round
@@ -80,6 +90,6 @@ export default function CryptoWorld() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

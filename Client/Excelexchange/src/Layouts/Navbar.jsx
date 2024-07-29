@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Excellogo from "../assets/excel-blue-logo.png";
+import HumanIcon from "../assets/humanicon.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -9,16 +10,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import useSession  from "../hooks/useSession";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-  // const [showDropdown, setShowDropdown] = useState({});
+  const { user, logout } = useSession();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // const toggleDropdown = (index) => {
-  //   setShowDropdown((prev) => ({ ...prev, [index]: !prev[index] }));
-  // };
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".dropdown")) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,18 +98,26 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col space-y-5 mt-4">
-              <Link
-                onClick={() => setShowMenu(false)}
-                to="/login"
-                className="btn btn-sm">
-                Log In
-              </Link>
-              <Link
-                onClick={() => setShowMenu(false)}
-                to="/signup"
-                className="btn btn-sm bg-blue-800 text-white">
-                Sign Up
-              </Link>
+              {user ? (
+                <button onClick={logout} className="btn btn-sm">
+                  Log Out
+                </button>
+              ) : (
+                <>
+                  <Link
+                    onClick={() => setShowMenu(false)}
+                    to="/login"
+                    className="btn btn-sm">
+                    Log In
+                  </Link>
+                  <Link
+                    onClick={() => setShowMenu(false)}
+                    to="/signup"
+                    className="btn btn-sm bg-blue-800 text-white">
+                    Sign Up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -153,14 +176,40 @@ export default function Navbar() {
                 className="input input-bordered w-24 input-sm md:w-auto "
               />
             </div>
-            <div className="space-x-1 hidden custom:block">
-              <Link to="/login" className="btn btn-sm">
-                Log In
-              </Link>
-              <Link to="/signup" className="btn btn-sm bg-blue-800 text-white">
-                Sign Up
-              </Link>
-            </div>
+            {user ? (
+              <div className="dropdown relative">
+                <button className="btn btn-sm px-2" onClick={toggleDropdown}>
+                  <img
+                    src={HumanIcon}
+                    className="rounded-full w-8 h-8"
+                    alt="User avatar"
+                  />
+                </button>
+                {isDropdownOpen && (
+                  <ul className="dropdown-menu absolute z-50 shadow-md rounded-lg mt-2">
+                    <li>
+                      <Link to="/profile">Profile</Link>
+                    </li>
+                    <li>
+                      <Link to="/" onClick={logout}>
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </div>
+            ) : (
+              <div className="space-x-1 hidden custom:block">
+                <Link to="/login" className="btn btn-sm">
+                  Log In
+                </Link>
+                <Link
+                  to="/signup"
+                  className="btn btn-sm bg-blue-800 text-white">
+                  Sign Up
+                </Link>
+              </div>
+            )}
             <div className="flex space-x-2">
               <FontAwesomeIcon
                 icon={faGlobe}

@@ -7,6 +7,7 @@ import Company from "./Company";
 import Market from "./Market";
 import BuyCrypto from "./BuyCrypto";
 import Dashboard from "./Dashboard";
+import Profile from "./Profile";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   Market,
   BuyCrypto,
   Dashboard,
+  Profile
 };

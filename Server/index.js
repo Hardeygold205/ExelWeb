@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5005;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../Client/Excelexchange/dist")));
 
 console.log("Connecting to MongoDB...");
 
@@ -34,6 +35,12 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../Client/Excelexchange/dist", "index.html")
+  );
+});
 
 app.post("/api/signup", async (req, res) => {
   try {

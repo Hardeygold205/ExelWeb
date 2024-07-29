@@ -6,14 +6,11 @@ import { Input } from "../ui/input";
 import { cn } from "../utils/cn";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
-// import BTCImg from "../assets/bitcoin-btc-logo.png";
-// import ETHImg from "../assets/Ethereum-Logo-PNG-Pic.png";
-// import TRXImg from "../assets/tron-logo.png";
-// import USDTImg from "../assets/tether.png";
-// import XRPImg from "../assets/stellar.png";
 import axios from "axios";
+import useSession from "../hooks/useSession";
 
 export default function LoginPage() {
+  const { login } = useSession();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,11 +52,15 @@ export default function LoginPage() {
     setErrors({});
     setMessage("");
     try {
-      const response = await axios.post("http://172.20.10.2:5005/api/login", {
-        email,
-        password,
-      });
-      navigate("/dashboard");
+      const response = await axios.post(
+        "https://factually-organic-chipmunk.ngrok-free.app/api/login",
+        {
+          email,
+          password,
+        }
+      );
+      login(response.data.token);
+      navigate("/");
       console.log("Login response:", response.data);
     } catch (error) {
       console.error("Login error:", error);
