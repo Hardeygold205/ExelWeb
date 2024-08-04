@@ -78,12 +78,15 @@ export default function SignupPage() {
     setErrors({});
     setMessage("");
     try {
-      const response = await axios.post("https://factually-organic-chipmunk.ngrok-free.app/api/signup", {
-        firstname,
-        lastname,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://factually-organic-chipmunk.ngrok-free.app/api/signup",
+        {
+          firstname,
+          lastname,
+          email,
+          password,
+        }
+      );
       login(response.data.token);
       navigate("/dashboard");
       console.log("Signup response:", response.data);
