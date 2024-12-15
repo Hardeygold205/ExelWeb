@@ -115,7 +115,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={social.link}
-                    className="rounded-full outline outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center">
+                    className="rounded-full outline dark:outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
                     {social.icon}
                   </Link>
                 ))}
@@ -125,7 +125,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={social.link}
-                    className="rounded-full outline outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center">
+                    className="rounded-full outline dark:outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
                     {social.icon}
                   </Link>
                 ))}

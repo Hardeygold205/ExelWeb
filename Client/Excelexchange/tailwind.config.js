@@ -5,7 +5,6 @@ import svgToDataUri from "mini-svg-data-uri";
 import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 
 export default {
-  //darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   theme: {
     extend: {
@@ -65,7 +64,7 @@ export default {
     },
   ],
   daisyui: {
-    themes: ["dark", "autumn"],
+    themes: ["autumn", "black"],
   },
 };
 

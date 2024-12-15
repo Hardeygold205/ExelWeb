@@ -2,29 +2,44 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
-      return (
-        localStorage.getItem("theme") || 
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "dark")
-      );
+      try {
+        return (
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "black"
+            : "autumn")
+        );
+      } catch (error) {
+        console.error("Error loading theme from localStorage:", error);
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "black"
+          : "autumn";
+      }
     }
-    return "dark";
+    return "autumn";
   });
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "autumn" : "dark";
+    const newTheme = theme === "black" ? "autumn" : "black";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("theme", newTheme);
+      } catch (error) {
+        console.error("Error saving theme to localStorage:", error);
+      }
+      document.documentElement.setAttribute("data-theme", newTheme);
+    }
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.body.classList.toggle("dark-mode", theme === "dark");
+    if (typeof window !== "undefined") {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
   }, [theme]);
 
   return (
@@ -34,4 +49,5 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => useContext(ThemeContext);
