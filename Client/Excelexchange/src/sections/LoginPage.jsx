@@ -52,13 +52,11 @@ export default function LoginPage() {
     setErrors({});
     setMessage("");
     try {
-      const response = await axios.post(
-        "https://factually-organic-chipmunk.ngrok-free.app/api/login",
-        {
-          email,
-          password,
-        }
-      );
+      const apiUrl = import.meta.env.VITE_APP_SERVER_API_URL;
+      const response = await axios.post(`${apiUrl}/login`, {
+        email,
+        password,
+      });
       login(response.data.token);
       navigate("/");
       console.log("Login response:", response.data);

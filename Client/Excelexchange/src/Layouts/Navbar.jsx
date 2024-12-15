@@ -11,6 +11,7 @@ import {
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import useSession  from "../hooks/useSession";
+import { useTheme } from "../constant/ThemeContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,8 @@ export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const { user, logout } = useSession();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const { theme, toggleTheme } = useTheme();
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -222,7 +225,13 @@ export default function Navbar() {
             </div>
             <div className="items-center sm:flex hidden">
               <label className="swap swap-rotate">
-                <input type="checkbox" className="" value="emerald" />
+                <input
+                  type="checkbox"
+                  className="theme-controller"
+                  value="dark"
+                  onChange={toggleTheme}
+                  checked={theme === "dark"}
+                />
                 <svg
                   className="swap-on h-6 w-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
