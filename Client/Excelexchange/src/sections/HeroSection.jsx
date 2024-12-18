@@ -46,7 +46,7 @@ export default function HeroSection() {
     },
   ];
 
-  const words = ["Fast", "Best", "Leading", "Modern"];
+  const words = ["Premier", "Leading", "Modern"];
 
   return (
     <div className="place-items-center relative h-auto space-y-7 md:space-y-12 my-10 grid p-5 md:p-20 pt-5 max-w-7xl mx-auto">

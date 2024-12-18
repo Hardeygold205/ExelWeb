@@ -13,7 +13,7 @@ export default function Layout() {
   return (
     <div className="relative min-h-screen">
       <Navbar />
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-[1] pointer-events-none">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"

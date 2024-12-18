@@ -87,7 +87,9 @@ export default function Footer() {
               <ul className="list-disc">
                 {section.lists.map((listItem, listIndex) => (
                   <li className="list-none" key={listIndex}>
-                    <a href="#" className="link link-hover text-[0.75rem]">
+                    <a
+                      href="#"
+                      className="link link-hover text-[0.65rem] font-bold">
                       {listItem}
                     </a>
                   </li>
@@ -115,7 +117,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={social.link}
-                    className="rounded-full outline dark:outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
+                    className="rounded-full outline-[0.02rem] outline dark:outline-gray-300 p-2 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
                     {social.icon}
                   </Link>
                 ))}
@@ -125,7 +127,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={social.link}
-                    className="rounded-full outline dark:outline-gray-300 p-1 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
+                    className="rounded-full outline-[0.02rem] outline dark:outline-gray-300 p-2 hover:outline-blue-800 hover:scale-110 flex justify-center items-center ease-in-out duration-200">
                     {social.icon}
                   </Link>
                 ))}
@@ -133,7 +135,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-8 text-justify text-[0.8rem]">
+          <div className="md:col-span-8 space-y-8 text-justify text-[0.7rem] font-bold">
             <p>
               Excelexchange is a Securities Dealer registered in... with
               registration number... and authorised by the Financial Services
@@ -170,7 +172,7 @@ export default function Footer() {
       </footer>
       <div className="divider mx-auto max-w-7xl"></div>
       <footer className="footer bg-base-200 text-base-content max-w-7xl mx-auto">
-        <aside className="grid flow-col items-center justify-between w-full">
+        <aside className="grid flow-col items-center text-[0.7rem] justify-between w-full font-bold">
           <Link to="">Risk Disclosure</Link>
           <Link to="">Privacy Agreement</Link>
           <Link to="">Preventing Money Laundering</Link>

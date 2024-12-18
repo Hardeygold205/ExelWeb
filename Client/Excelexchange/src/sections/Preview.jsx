@@ -33,11 +33,11 @@ export default function Preview() {
   const [isDesktop, setIsDesktop] = useState(true);
   const size = useWindowSize();
 
-  const shouldAnimate = size.width >= 768; // md breakpoint is 768px in Tailwind CSS
+  const shouldAnimate = size.width >= 768;
 
   return (
     <div className="space-y-20 my-10 mb-16 h-auto max-w-7xl mx-auto">
-      <div className="container mx-auto text-center md:flex justify-between w-full lg:w-[80%] custom1:space-x-10">
+      <div className="mx-auto text-center md:flex justify-between w-full lg:w-[80%] custom1:space-x-10">
         <div className="grid gap-5 place-content-center md:w-2/5">
           {shouldAnimate ? (
             <motion.div
@@ -108,7 +108,7 @@ export default function Preview() {
             className="justify-between flex flex-col w-full md:w-3/5">
             <div>
               <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
-                Trade on the go. Anywhere, <br className="md:flex hidden" />{" "}
+                Trade on the go. Anywhere, <br className="sm:flex hidden" />{" "}
                 anytime.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function Preview() {
             </div>
           </motion.div>
         ) : (
-          <div className="grid mt-10 md:mt-0 space-y-10 md:space-y-5 md:w-1/2">
+          <div className="mt-10 md:mt-0 space-y-10 md:space-y-5 w-full p-5">
             <div>
               <p className="md:text-4xl text-3xl font-bold text-center md:text-start">
                 Trade on the go. Anywhere, <br className="md:flex hidden" />{" "}
