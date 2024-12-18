@@ -41,7 +41,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
+      setIsScrolled(scrollTop > 100);
     };
 
     if (location.pathname !== "/login" && location.pathname !== "/signup") {
@@ -69,10 +69,10 @@ export default function Navbar() {
     <div
       className={`${
         hideScrolling
-          ? "bg-base-200 navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300 fixed"
+          ? "bg-base-200 navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-700 fixed"
           : isScrolled
-          ? "bg-base-200 bg-opacity-95 navbar w-full mx-auto lg:w-[95%] border-x-[0.6px] border-x-gray-700 fixed top-0 left-0 right-0 rounded-b-xl border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
-          : "bg-base-200 bg-opacity-95 navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-300"
+          ? "bg-base-200 bg-opacity-95 navbar w-full mx-auto lg:w-[95%] border-x-[0.6px] border-x-gray-700 fixed top-0 left-0 right-0 rounded-b-xl border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-700"
+          : "bg-base-200 bg-opacity-95 navbar top-0 mx-auto left-0 right-0 w-full border-b-gray-700 border-b-[0.6px] z-50 transition-all duration-700"
       }`}>
       {showMenu && (
         <div
