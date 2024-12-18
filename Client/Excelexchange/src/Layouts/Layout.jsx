@@ -2,8 +2,10 @@ import { Navbar, Footer } from "../Layouts";
 import Contact from "../constant/Contact";
 import { Outlet, useLocation } from "react-router-dom";
 import { SparklesCore } from "../ui/sparkles";
+import { useTheme } from "../constant/ThemeContext";
 
-export default function Layout() {
+export default function Layout() {  
+  const { theme } = useTheme();
   const location = useLocation();
   const hideFooter =
     location.pathname === "/login" || location.pathname === "/signup";
@@ -19,7 +21,7 @@ export default function Layout() {
           maxSize={0.6}
           particleDensity={100}
           className="w-full h-full"
-          particleColor="#FFFFFF"
+          particleColor={theme==="black" ? "#ffffff" : "#000"}
         />
       </div>
       <main className="relative z-40 mx-auto">

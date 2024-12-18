@@ -3,8 +3,11 @@ import { TypewriterEffect } from "../ui/typewriter-effect";
 import { Spotlight } from "../ui/Spotlight";
 import { FlipWords } from "../ui/flip-words";
 import { motion } from "framer-motion";
+import { useTheme } from "../constant/ThemeContext";
 
 export default function HeroSection() {
+  const { theme } = useTheme();
+
   const changes = [
     {
       text: "Buy",
@@ -49,7 +52,7 @@ export default function HeroSection() {
     <div className="place-items-center relative h-auto space-y-7 md:space-y-12 my-10 grid p-5 md:p-20 pt-5 max-w-7xl mx-auto">
       <Spotlight
         className="-top-40 left-0 md:left-50 md:-top-10"
-        fill="white"
+        fill={theme==="black" ? "white" : "black"}
       />
       <motion.div
         initial={{ opacity: 0, y: 20 }}

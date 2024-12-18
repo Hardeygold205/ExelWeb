@@ -8,11 +8,11 @@
     height: 100%;
     width: 100%;
     @apply font-sans;
-    @apply dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.025] ;
+    @apply dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.045];
 }
 
 @media (prefers-color-scheme: dark) {
     :root, html, body {
-        @apply dark:bg-black bg-white dark:bg-grid-white/[0.06] bg-grid-black/[0.2];
+        @apply dark:bg-black bg-white dark:bg-grid-white/[0.08] bg-grid-black/[0.2];
     }
 }

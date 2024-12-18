@@ -15,9 +15,6 @@ export const ThemeProvider = ({ children }) => {
         );
       } catch (error) {
         console.error("Error loading theme from localStorage:", error);
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "black"
-          : "autumn";
       }
     }
     return "autumn";
