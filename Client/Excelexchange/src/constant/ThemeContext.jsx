@@ -36,6 +36,11 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.setAttribute("data-theme", theme);
+      window.addEventListener("storage", (event) => {
+        if (event.key === "theme") {
+          setTheme(event.newValue);
+        }
+      });
     }
   }, [theme]);
 

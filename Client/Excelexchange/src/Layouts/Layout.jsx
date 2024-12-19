@@ -16,7 +16,7 @@ export default function Layout() {
       <div className="fixed inset-0 z-[1] pointer-events-none">
         <SparklesCore
           id="tsparticlesfullpage"
-          background="transparent"
+          background={theme === "black" ? "black" : "white"}
           minSize={0.2}
           maxSize={0.6}
           particleDensity={100}

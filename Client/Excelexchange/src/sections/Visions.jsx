@@ -54,20 +54,17 @@ export default function Visions() {
       <h1 className="text-4xl font-bold text-center">
         Cryptocurrency in <br /> Every Wallet™
       </h1>
-      <div>
-        <img
-          src={Excellogo}
-          alt="Excel logo"
-          className="w-50 h-50 drop-shadow-2xl"
-        />
+      <div className="relative">
+        <div className="absolute inset-10 rounded-full blur-2xl bg-blue-500 opacity-30"></div>
+        <img src={Excellogo} alt="Excel logo" className="w-50 h-50" />
       </div>
       <div className="flex justify-between my-5 md:w-[60%] w-full">
         <div className="text-center ">
-          <h3 className="font-bold text-xl">Founded in</h3>
+          <h3 className="font-extrabold text-xl">Founded in</h3>
           <h1 className="text-4xl font-extrabold text-blue-800">{counter}</h1>
         </div>
         <div ref={counterRef} className="text-center ">
-          <h3 className="font-bold text-xl">Users</h3>
+          <h3 className="font-extrabold text-xl">Users</h3>
           <h1 className="text-4xl font-extrabold text-blue-800">01</h1>
         </div>
       </div>

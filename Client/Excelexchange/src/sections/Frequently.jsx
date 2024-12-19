@@ -48,7 +48,7 @@ export default function Frequently() {
     <div className="border-y-gray-700 border-y-[0.6px] p-4 md:p-10">
       <div className="grid md:grid-cols-5 gap-5 max-w-7xl mx-auto justify-center w-full custom1:w-[80%]">
         <div className="md:col-span-2">
-          <h1 className="text-3xl font-bold md:text-start text-center">
+          <h1 className="text-3xl font-extrabold md:text-start text-center">
             Frequently Asked <br className="md:flex hidden" /> Questions
           </h1>
         </div>
@@ -65,7 +65,7 @@ export default function Frequently() {
               </Accordion.Panel>
             ))}
           </Accordion>
-          <p className=" text-xl my-3">
+          <p className=" text-xl my-3 font-bold">
             Have more questions?{" "}
             <span className="text-blue-800">Contact Us</span>
           </p>
