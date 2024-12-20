@@ -118,7 +118,7 @@ export default function Preview() {
               </div>
               <div className="text-start space-y-4">
                 <p className="text-gray-500">Scan to download the App</p>
-                <p className="text-white font-bold">iOS and Android</p>
+                <p className="font-bold">iOS and Android</p>
               </div>
             </div>
             <div className="flex justify-between">

@@ -13,6 +13,7 @@ export default {
         custom1: "855px",
         custom2: "300px",
       },
+
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
@@ -64,7 +65,20 @@ export default {
     },
   ],
   daisyui: {
-    themes: ["autumn", "black"],
+    themes: [
+      {
+        autumn: {
+          // eslint-disable-next-line no-undef
+          ...require("daisyui/src/theming/themes")["autumn"],
+          "--custom-bg-grid": "black/[0.045]",
+        },
+        black: {
+          // eslint-disable-next-line no-undef
+          ...require("daisyui/src/theming/themes")["black"],
+          "--custom-bg-grid": "white/[0.08]",
+        },
+      },
+    ],
   },
 };
 

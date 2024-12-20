@@ -7,16 +7,23 @@ html,
 body {
   padding: 0;
   margin: 0;
-  height: 100%;
-  width: 100%;
   @apply font-sans;
-  @apply  bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.045];
 }
 
+/* Autumn Theme */
+[data-theme="autumn"] body {
+  @apply bg-grid-black/[0.045];
+}
+
+/* Black Theme and Dark Mode */
 @media (prefers-color-scheme: dark) {
-  :root,
-  html,
-  body {
-    @apply dark:bg-black bg-white dark:bg-grid-white/[0.08] bg-grid-black/[0.2];
+  html[data-theme="black"] body,
+  html body {
+    @apply bg-grid-white/[0.08];
   }
+}
+
+/* Override with CSS Variables for dynamic theme changes */
+body {
+  background-image: var(--custom-bg-grid, none); /* Use none as fallback */
 }

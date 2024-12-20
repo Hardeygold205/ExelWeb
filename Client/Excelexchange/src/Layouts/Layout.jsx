@@ -13,15 +13,15 @@ export default function Layout() {
   return (
     <div className="relative min-h-screen">
       <Navbar />
-      <div className="fixed inset-0 z-[1] pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <SparklesCore
           id="tsparticlesfullpage"
-          background={theme === "black" ? "black" : "white"}
+          background="transparent"
           minSize={0.2}
           maxSize={0.6}
           particleDensity={100}
           className="w-full h-full"
-          particleColor={theme==="black" ? "#ffffff" : "#000"}
+          particleColor={theme === "black" ? "#ffffff" : "#000"}
         />
       </div>
       <main className="relative z-40 mx-auto">
