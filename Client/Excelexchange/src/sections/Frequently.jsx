@@ -58,7 +58,7 @@ export default function Frequently() {
               <Accordion.Panel key={index}>
                 <Accordion.Title>{item.title}</Accordion.Title>
                 <Accordion.Content>
-                  <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  <p className="mb-2">
                     {item.content}
                   </p>
                 </Accordion.Content>

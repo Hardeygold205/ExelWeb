@@ -70,12 +70,12 @@ export default {
         autumn: {
           // eslint-disable-next-line no-undef
           ...require("daisyui/src/theming/themes")["autumn"],
-          "--custom-bg-grid": "black/[0.045]",
+          "--custom-bg-grid": "black/[0.03]",
         },
         black: {
           // eslint-disable-next-line no-undef
           ...require("daisyui/src/theming/themes")["black"],
-          "--custom-bg-grid": "white/[0.08]",
+          "--custom-bg-grid": "white/[0.1]",
         },
       },
     ],

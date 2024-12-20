@@ -10,20 +10,17 @@ body {
   @apply font-sans;
 }
 
-/* Autumn Theme */
-[data-theme="autumn"] body {
-  @apply bg-grid-black/[0.045];
+[data-theme="autumn"] body, html {
+  @apply bg-grid-black/[0.03];
 }
 
-/* Black Theme and Dark Mode */
 @media (prefers-color-scheme: dark) {
   html[data-theme="black"] body,
   html body {
-    @apply bg-grid-white/[0.08];
+    @apply bg-grid-white/[0.1];
   }
 }
 
-/* Override with CSS Variables for dynamic theme changes */
 body {
-  background-image: var(--custom-bg-grid, none); /* Use none as fallback */
+  background-image: var(--custom-bg-grid, none); 
 }
