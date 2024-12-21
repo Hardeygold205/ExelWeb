@@ -52,8 +52,8 @@ export default function Frequently() {
             Frequently Asked <br className="md:flex hidden" /> Questions
           </h1>
         </div>
-        <div className="md:col-span-3 ">
-          <Accordion collapseAll >
+        <div className="md:col-span-3">
+          <Accordion collapseAll  >
             {questions.map((item, index) => (
               <Accordion.Panel key={index}>
                 <Accordion.Title>{item.title}</Accordion.Title>

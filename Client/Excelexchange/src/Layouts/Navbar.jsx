@@ -76,10 +76,10 @@ export default function Navbar() {
       }`}>
       {showMenu && (
         <div
-          className={`fixed top-0 left-0 bottom-0 w-full h-screen z-50 duration-200 ease-in-out ${
+          className={`fixed top-0 left-0 bottom-0 bg-base-200 w-full h-screen z-50 duration-200 ease-in-out ${
             showMenu ? "translate-x-0 " : "-translate-x-full"
           }`}>
-          <div className="flex flex-col dark:bg-black bg-white h-screen w-full px-4 py-6 shadow-lg">
+          <div className="flex flex-col h-screen w-full px-4 py-6 shadow-lg">
             <div className="flex items-center justify-end ">
               <label className="swap swap-rotate">
                 <input
@@ -116,7 +116,7 @@ export default function Navbar() {
                 className={`block px-4 py-2 text-sm font-medium ${
                   location.pathname === item.link
                     ? "text-blue-800"
-                    : "text-gray-700 hover:text-blue-800"
+                    : "hover:text-blue-800"
                 } transition-all duration-300`}>
                 {item.summary}
               </Link>
@@ -131,7 +131,7 @@ export default function Navbar() {
                   <Link
                     onClick={() => setShowMenu(false)}
                     to="/login"
-                    className="btn btn-sm">
+                    className="btn btn-sm outline">
                     Log In
                   </Link>
                   <Link

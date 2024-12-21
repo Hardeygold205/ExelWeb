@@ -88,12 +88,12 @@ export default function LoginPage() {
   return (
     <div className="relative ">
       <div className="grid lg:grid-cols-5 w-full mx-auto max-w-[1400px] mt-14 custom1:mt-0 custom1:py-10 relative custom1:fixed top-0 bottom-0">
-        <div className="lg:col-span-2 col-span-5 p-5 mx-auto flex lg:p-10">
-          <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-            <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+        <div className="lg:col-span-2 col-span-5 p-5 my-auto flex md:p-10">
+          <div className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input">
+            <h2 className="font-bold text-xl ">
               Welcome Back
             </h2>
-            <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+            <p className="text-sm max-w-sm mt-2">
               Login to your account.
             </p>
             <form className="my-8" onSubmit={handleLogin}>
@@ -130,7 +130,7 @@ export default function LoginPage() {
                 )}
               </LabelInputContainer>
               <button
-                className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                 type="submit">
                 Log In &rarr;
                 <BottomGradient />
@@ -173,7 +173,7 @@ export default function LoginPage() {
             </form>
           </div>
         </div>
-        <div className="lg:col-span-3 col-span-5 flex flex-col lg:flex-row items-center justify-between bg-white dark:bg-black p-5 w-full rounded-none md:rounded-2xl border-gray-400 border-[0.6px] m-10 mx-auto">
+        <div className="lg:col-span-3 col-span-5 flex flex-col lg:flex-row items-center justify-between p-5 w-full rounded-none md:rounded-2xl border-[1px] m-10 mx-auto">
           <div className="space-y-10 lg:space-y-20">
             <h1 className="text-2xl lg:text-4xl font-extrabold">
               Find and Trade <br className="hidden lg:flex" /> Thousands of{" "}
