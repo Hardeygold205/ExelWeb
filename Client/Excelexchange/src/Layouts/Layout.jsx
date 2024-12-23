@@ -1,10 +1,13 @@
-import { Navbar, Footer } from "../Layouts";
-import Contact from "../constant/Contact";
+import React, { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { SparklesCore } from "../ui/sparkles";
 import { useTheme } from "../constant/ThemeContext";
 
-export default function Layout() {  
+const Navbar = React.lazy(() => import("./Navbar"));
+const Footer = React.lazy(() => import("./Footer"));
+const Contact = React.lazy(() => import("../constant/Contact"));
+
+export default function Layout() {
   const { theme } = useTheme();
   const location = useLocation();
   const hideFooter =
@@ -12,7 +15,9 @@ export default function Layout() {
 
   return (
     <div className="relative min-h-screen">
-      <Navbar />
+      <Suspense fallback={<div>Loading Navbar...</div>}>
+        <Navbar />
+      </Suspense>
       <div className="absolute inset-0 z-[1] pointer-events-none">
         <SparklesCore
           id="tsparticlesfullpage"
@@ -28,8 +33,14 @@ export default function Layout() {
         <Outlet />
       </main>
       <div className="relative z-40">
-        <Contact />
-        {!hideFooter && <Footer />}
+        <Suspense fallback={<div>Loading Contact...</div>}>
+          <Contact />
+        </Suspense>
+        {!hideFooter && (
+          <Suspense fallback={<div>Loading Footer...</div>}>
+            <Footer />
+          </Suspense>
+        )}
       </div>
     </div>
   );
