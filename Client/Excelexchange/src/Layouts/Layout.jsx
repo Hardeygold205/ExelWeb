@@ -15,7 +15,7 @@ export default function Layout() {
 
   return (
     <div className="relative min-h-screen">
-      <Suspense fallback={<div>Loading Navbar...</div>}>
+      <Suspense>
         <Navbar />
       </Suspense>
       <div className="absolute inset-0 z-[1] pointer-events-none">
@@ -33,11 +33,11 @@ export default function Layout() {
         <Outlet />
       </main>
       <div className="relative z-40">
-        <Suspense fallback={<div>Loading Contact...</div>}>
+        <Suspense>
           <Contact />
         </Suspense>
         {!hideFooter && (
-          <Suspense fallback={<div>Loading Footer...</div>}>
+          <Suspense>
             <Footer />
           </Suspense>
         )}

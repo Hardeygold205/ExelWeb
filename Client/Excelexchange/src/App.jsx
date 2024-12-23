@@ -12,11 +12,12 @@ const Potfolio = React.lazy(() => import("./pages/Potfolio"));
 const BuyCrypto = React.lazy(() => import("./pages/BuyCrypto"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Profile = React.lazy(() => import("./pages/Profile"));
+import HomeSkeleton from "./constant/HomeSkeleton";
 
 export default function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<HomeSkeleton />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export default function Market() {
   const [cryptos, setCryptos] = useState([]);
@@ -34,7 +36,13 @@ export default function Market() {
     fetchCryptos();
   }, [page]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+        <h1 className="mt-4">Please wait...</h1>
+      </div>
+    );
   if (error) return <div>Error: {error.message}</div>;
 
   return (
